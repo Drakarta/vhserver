@@ -1,16 +1,14 @@
-version: "3.8"
-
+version: '3.8'
 services:
-  vh:
+  minecraft:
     build:
       context: .
       dockerfile: dockerfile
-    tty: true
     stdin_open: true
+    tty: true
     ports:
       - "25565:25565"
-    volumes: minecraft-data:/server/world
+    volumes:
+      - minecraft-data:/server/server/world
 volumes:
   minecraft-data:
-
-
